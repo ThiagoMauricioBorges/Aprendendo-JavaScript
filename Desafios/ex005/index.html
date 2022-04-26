@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de medidas</title>
+    <style>
+        body {
+            font: normal 18pt Arial;
+        }
+        input {
+            padding: 14px;
+            font-size: 13pt;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor de Medidas</h1>
+    <input type="button" value="Converter" onclick="converter()">
+    <p id="instrucao">Clique no botão acima para iniciar.</p>
+    <div id="convercao"></div>
+    <script>
+        function converter() {
+            var metros = Number(window.prompt('Digite uma distância em metros (m)'))
+
+            var quilômetros = metros/1000
+            var hecômetros = metros/100
+            var decâmetros = metros/10
+            var decímetros = metros*10
+            var centímetros = metros*100
+            var milímetros = metros*1000
+
+            var instrucao = window.document.getElementById('instrucao')
+            instrucao.innerHTML = `<strong>A distância de ${metros} metros, corresponde a...</strong> <br>`  
+
+            var convercao = window.document.getElementById('convercao') 
+
+            convercao.innerHTML = `${quilômetros.toFixed(3)} quilômetros (Km)<br>
+            ${hecômetros.toFixed(3)} hecômetros (Hm)<br>
+            ${decâmetros.toFixed(3)} decâmetros (Hm)<br>
+            ${decímetros.toFixed(3)} decímetros (Hm)<br>
+            ${centímetros.toFixed(3)} centímetros (Hm)<br>
+            ${milímetros.toFixed(3)} milímetros (Hm)<br>`
+        }
+    </script>
+</body>
+</html>
